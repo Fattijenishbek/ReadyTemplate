@@ -1,0 +1,14 @@
+{% load static%}
+<!--to load static files, and everywheere we use static files
+we should write {% static 'file'%} this format-->
+
+<link rel="stylesheet" href="{% static 'style.css' %}" />
+
+<h1>Input your text below:</h1>
+<form method="POST" action="counter">
+  {% csrf_token %}
+  <!--when we leave method without specification it automatically uses GET-->
+  <!--on action returns particular data to counter.html file-->
+  <textarea name="words" rows="25" cols="100"></textarea><br />
+  <input type="submit" />
+</form>
